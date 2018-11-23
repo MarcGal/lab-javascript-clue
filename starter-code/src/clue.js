@@ -1,4 +1,6 @@
-// Characters
+let characters = [
+  
+]
 /*
 mrGreen
 first_name:   Jacob
