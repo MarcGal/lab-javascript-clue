@@ -86,24 +86,42 @@ var roomsArray = [
 // =========================  Weapons Collection ========================= 
 var weaponsArray = [
 
-  { name: rope       , weight: 10,},
+  { name: "rope"       , weight: 10,},
 
-  { name: knife      , weight: 8, },
+  { name: "knife"      , weight: 8, },
 
-  { name: candlestick, weight: 2 },
+  { name: "candlestick", weight: 2 },
  
-  { name: dumbbell   , weight: 30 },
+  { name: "dumbbell"   , weight: 30 },
  
-  { name: poison     , weight: 2 },
+  { name: "poison"     , weight: 2 },
  
-  { name: axe        , weight: 15 },
+  { name: "axe"       , weight: 15 },
  
-  { name: bat        , weight: 13 },
+  { name: "bat"        , weight: 13 },
  
-  { name: trophy     , weight: 25 },
+  { name: "trophy"     , weight: 25 },
  
-  { name: pistol     , weight: 20 },
+  { name: "pistol"     , weight: 20 },
 
 ];
 
+randomNumber = 0;
+randomElement = "";
 
+function randomSelector (arr){
+
+  if (arr === []){
+    return;
+  
+  }else if (arr.length === 1){
+    return arr[0];
+
+  }
+}
+
+// randonnumber = math.floor(math.random() * arr.length +1);
+// randomElement = arr[randomNumber];
+
+
+// return randomElement;
