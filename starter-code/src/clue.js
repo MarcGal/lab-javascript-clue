@@ -64,7 +64,6 @@ var charactersArray = [
 
 // =========================  Rooms' Collection ========================= 
 var roomsArray = [
-
   {name: "Dinning Room"},
   {name: "Conservatory"},
   {name: "Kitchen"},
@@ -80,7 +79,6 @@ var roomsArray = [
   {name: "Theater"},
   {name: "Guest House"},
   {name: "Patio"},
-
 ];
 
 // =========================  Weapons Collection ========================= 
@@ -106,22 +104,38 @@ var weaponsArray = [
 
 ];
 
-randomNumber = 0;
-randomElement = "";
-
 function randomSelector (arr){
 
   if (arr === []){
-    return;
+    return undefined;
   
-  }else if (arr.length === 1){
+  } else if (arr.length === 1){
     return arr[0];
 
+  } else {
+    let randomNumber = Math.floor(Math.random() * arr.length);
+    return arr[randomNumber];
   }
 }
 
-// randonnumber = math.floor(math.random() * arr.length +1);
-// randomElement = arr[randomNumber];
+// console.log(randomSelector(charactersArray));
 
 
-// return randomElement;
+function pickMistery (){
+  
+  misteryEnvelope = [];
+
+  misteryEnvelope.push(randomSelector(charactersArray));
+  misteryEnvelope.push(randomSelector(weaponsArray));
+  misteryEnvelope.push(randomSelector(roomsArray));
+
+  return misteryEnvelope;
+}
+
+console.log(pickMistery(charactersArray, roomsArray, weaponsArray));
+
+
+function revealMistery (misteryEnvelope) {
+  return misteryEnvelope[0].first_name + " " + misteryEnvelope[0].last_name + " killed Mr.Boddy using the " + misteryEnvelope[1].name + " in the " + misteryEnvelope[2].name + "!!!!";
+};
+
